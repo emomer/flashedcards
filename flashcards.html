@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashedcards</title>
+    <link rel="stylesheet" href="flashcards.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!------ HEADER NAV -------->
+    <nav class="headerNav">
+      <div class="headerContainer container">
+        <div class="navLeft">
+          <img class="logo" src="logo.svg" alt="logo" />
+          <div class="webTitle">Flashedcards</div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="flashcards-section container margin-func">
+      <div class="statsandbuttons">
+        <div class="stack-header">
+          <h2 id="stackName"></h2>
+        </div>
+        <div class="stats">
+          <h3>Today:</h3>
+          <h3><span id="learnedCards">X</span> Learned Cards</h3>
+          <h3><span id="unlearnedCards">X</span> Unlearned Cards</h3>
+        </div>
+
+        <div class="buttons">
+          <button id="addCardButton">Add Flashcard</button>
+          <button id="learnAllButton">Learn All</button>
+          <button id="learnUnlearnedButton">Learn Unlearned Cards</button>
+        </div>
+      </div>
+      <div class="cardlist">
+        <h3 class="deck-title">
+          Cards in Deck (<span id="deckCount">X</span>)
+        </h3>
+        <ul class="flashcardList"></ul>
+      </div>
+    </section>
+
+    <!------ EDIT FLASHCARD POPUP -------->
+    <div class="editFlashcardPopup hidden">
+      <div class="popupContent">
+        <span class="closeButton editFlashcardCloseButton">
+          <i class="fa-solid fa-xmark"></i>
+        </span>
+        <h3 id="popupTitle">Edit Flashcard</h3>
+        <form>
+          <label for="edit-flashcard-front">Front</label>
+          <input
+            type="text"
+            id="edit-flashcard-front"
+            name="edit-flashcard-front"
+            placeholder="Enter front text"
+            required
+          />
+          <label for="edit-flashcard-back">Back</label>
+          <input
+            type="text"
+            id="edit-flashcard-back"
+            name="edit-flashcard-back"
+            placeholder="Enter back text"
+            required
+          />
+        </form>
+        <span id="editFlashcardError" class="error hidden">
+          Please fill in both fields.
+        </span>
+        <button class="saveFlashcardChanges" id="popupActionButton">
+          Save Changes
+        </button>
+      </div>
+    </div>
+
+    <script src="flashcards.js"></script>
+  </body>
+</html>
