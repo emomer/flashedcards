@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashedcards</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../favicon.ico/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../favicon.ico/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon.ico/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon.ico/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../favicon.ico/site.webmanifest" />
+  </head>
+  <body>
+    <!------ HEADER NAV -------->
+    <nav class="headerNav">
+      <div class="headerContainer container">
+        <div class="navLeft">
+          <img class="logo" src="../logo.svg" alt="logo" />
+          <div class="webTitle">Flashedcards</div>
+        </div>
+        <div class="navRight">
+          <button class="createNewStackButton">Create New Stack</button>
+        </div>
+      </div>
+    </nav>
+
+    <!------ POPUP CREATE NEW STACK -------->
+    <div class="createStackPopup hidden">
+      <div class="popupContent">
+        <span class="closeButton"><i class="fa-solid fa-xmark"></i></span>
+        <h3>Create New Stack</h3>
+        <form for="stack-name">
+          <label for="stack-name">Stack Name</label>
+          <input
+            type="text"
+            id="stack-name"
+            name="stack-name"
+            placeholder="Enter stack name"
+            required
+          />
+        </form>
+        <span id="stackNameError" class="error hidden"
+          >Please enter a valid stack name.</span
+        >
+        <button class="createStack">Create Stack</button>
+      </div>
+    </div>
+
+    <!------ POPUP EDIT STACKNAME -------->
+    <div class="editStackPopup hidden">
+      <div class="popupContent">
+        <span class="closeButton editCloseButton"
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+        <h3>Edit Stackname</h3>
+        <form>
+          <label for="edit-stack-name">New Stackname</label>
+          <input
+            type="text"
+            id="edit-stack-name"
+            name="edit-stack-name"
+            placeholder="Enter new stack name"
+            required
+          />
+        </form>
+        <span id="editStackNameError" class="error hidden"
+          >Please enter a valid stack name.</span
+        >
+        <button class="editStackSave">Save Changes</button>
+      </div>
+    </div>
+
+    <!------ DELETE STACK POPUP -------->
+    <div class="deleteStackPopup hidden">
+      <div class="popupContent">
+        <span class="closeButton deleteCloseButton"
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+        <p>Really delete this stack?</p>
+        <p><strong>All flashcards in this stack will be deleted!</strong></p>
+        <button class="deleteStackConfirmButton">Yes, delete stack</button>
+      </div>
+    </div>
+
+    <!------ POPUP ADD FLASHCARD -------->
+    <div class="addFlashcardPopup hidden">
+      <div class="popupContent">
+        <span class="closeButton addFlashcardCloseButton"
+          ><i class="fa-solid fa-xmark"></i
+        ></span>
+        <h3>Add Flashcard</h3>
+        <form>
+          <label for="flashcard-front">Front</label>
+          <input
+            type="text"
+            id="flashcard-front"
+            name="flashcard-front"
+            placeholder="Enter front text"
+            required
+          />
+          <label for="flashcard-back">Back</label>
+          <input
+            type="text"
+            id="flashcard-back"
+            name="flashcard-back"
+            placeholder="Enter back text"
+            required
+          />
+        </form>
+        <span id="flashcardError" class="error hidden">
+          Please fill in both fields.
+        </span>
+        <button class="createFlashcardButton">Create Flashcard</button>
+      </div>
+    </div>
+
+    <!------ EMPTY STACK -------->
+    <div class="emptyState hidden">
+      <p>No stacks available.</p>
+      <p>Create your first stack to get started!</p>
+    </div>
+
+    <!------ DECKS LIST -------->
+    <section class="container margin-func stackList"></section>
+
+    <script src="../js/script.js" defer></script>
+  </body>
+</html>
