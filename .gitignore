@@ -10,8 +10,8 @@
 
 # Ausschließen der images und fonts Ordner
 /images/
- /fonts/
+/fonts/
 
-# Ausschließen der favicon.ico und logo.svg
+# Ausschließen der favicon.ico und logo.svg Dateien
 /favicon.ico
 /logo.svg
