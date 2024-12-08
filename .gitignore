@@ -1,0 +1,17 @@
+# macOS-spezifische Dateien
+.DS_Store
+
+# Log-Dateien
+*.log
+
+# Andere sensible oder unnötige Dateien
+.env
+.vscode/
+
+# Ausschließen der images und fonts Ordner
+/images/
+ /fonts/
+
+# Ausschließen der favicon.ico und logo.svg
+/favicon.ico
+/logo.svg
